@@ -1,9 +1,14 @@
+const { createClient } = require("@supabase/supabase-js");
+
+//uX31h5PeLRNOyNsw
 $(document).ready(function() {
+    const supabase = createClient("https://lobfjkbplqjpatpranmt.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxvYmZqa2JwbHFqcGF0cHJhbm10Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTIyOTMzNDksImV4cCI6MjAwNzg2OTM0OX0.BafYAxku60hSotjriElb5CSgRELdZLxN-YGcejxWhMQ");
     let mediaRecorder;
     let recordedChunks = [];
     let isRecording = false;
     console.log('script.js loaded');
 
+    
     const startButton = $("#startRecording");
     const stopButton = $("#stopRecording");
 
@@ -63,4 +68,13 @@ $(document).ready(function() {
 
         recordedChunks = [];
     }
+    
+    $(function() {
+        $.ajax({
+            url: "https://lobfjkbplqjpatpranmt.supabase.co/rest/v1/recordings",
+            type: "POST",
+            file: $("#file").files[0],
+        }
+        );
+    });
 });
