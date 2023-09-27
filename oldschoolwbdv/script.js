@@ -19,6 +19,7 @@ $(document).ready(function() {
     function printingLogs() {
         console.log('debugging properly');
     }
+    
     function startRecording() {
         navigator.mediaDevices.getUserMedia({ audio: true })
             .then(function(stream) {
