@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
-import { getStorage } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-storage.js";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-storage.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -26,22 +26,19 @@ $(document).ready(function() {
         var audioInput = document.getElementById('audioInput');
         var file = audioInput.files[0];
         if (file) {
-            var storageRef = firebase.storage().ref();
-            var fileRef = storageRef.child('audio/' + file.name);
-            var uploadTask = fileRef.put(file);
-
-            uploadTask.on('state_changed', function(snapshot){
-                var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                console.log('Upload is ' + progress + '% done');
-            }, function(error) {
-                console.log("error uploading audio");
-            }, function() {
-                uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL){
-                    console.log('audio file available at', downloadURL);
+            var storageRef = ref(storage, "audio/" + file.name);
+            uploadBytes(storageRef, file).then((snapshot) => {
+                console.log('File uploaded successfully');
+                
+                // Get the download URL
+                getDownloadURL(snapshot.ref).then((downloadURL) => {
+                    console.log('Audio file available at', downloadURL);
                 });
+            }).catch((error) => {
+                console.error('Error uploading audio:', error);
             });
         } else {
-            alert('Select an audio file to uploaded')
+            alert('Select an audio file to upload');
         }
     });
 });
