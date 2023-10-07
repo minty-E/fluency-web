@@ -26,7 +26,7 @@ $(document).ready(function() {
         var audioInput = document.getElementById('audioInput');
         var file = audioInput.files[0];
         if (file) {
-            var storageRef = ref(storage, "audio/" + file.name);
+            var storageRef = ref(storage, "audioFiles/" + file.name);
             uploadBytes(storageRef, file).then((snapshot) => {
                 console.log('File uploaded successfully');
                 
