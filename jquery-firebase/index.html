@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="assets/css/Lato.css">
     <link rel="stylesheet" href="assets/css/Montserrat.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .custom-button {
+            transition: background-color 0.3s ease;
+        }
+        .custom-button-hover {
+            color: #19bc9b;
+        }
+    </style>
 </head>
 
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="72">
@@ -16,12 +24,14 @@
         <div class="container"><a class="navbar-brand" href="#page-top">Fluency App</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler text-white bg-primary navbar-toggler-right text-uppercase rounded" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./test.html">Voice analyzer</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Mindfulness</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">breathing</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./voiceAnalysis.html">Voice analyzer</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./mindfulness.html">Mindfulness</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./breathing.html">breathing</a></li>
                 </ul>
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" href="#">about</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link active custom-button" href="#about">about</a>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -29,10 +29,11 @@ $(document).ready(function() {
             var storageRef = ref(storage, "audioFiles/" + file.name);
             uploadBytes(storageRef, file).then((snapshot) => {
                 console.log('File uploaded successfully');
-                
+                alert('File uploaded successfully!');
                 // Get the download URL
                 getDownloadURL(snapshot.ref).then((downloadURL) => {
                     console.log('Audio file available at', downloadURL);
+                    alert('Go to ' + downloadURL + ' to see your uploaded file!');
                 });
             }).catch((error) => {
                 console.error('Error uploading audio:', error);
