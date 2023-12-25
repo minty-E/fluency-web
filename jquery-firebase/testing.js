@@ -18,7 +18,10 @@ $(document).ready(function() {
         messagingSenderId: "617765066780",
         appId: "1:617765066780:web:41031b3c41e18a323267d9"
     };
-
+    async function wait(){
+        await new Promise(resolve => setTimeout(resolve, 5000))
+    }
+    const score = 78;
     const app = initializeApp(firebaseConfig);
     const storage = getStorage(app);
     $("#uploadButton").on('click', function() {
@@ -35,6 +38,8 @@ $(document).ready(function() {
                     console.log('Audio file available at', downloadURL);
                     alert('Go to ' + downloadURL + ' to see your uploaded file!');
                 });
+                alert('Getting fluency score...')
+                wait().then(r => alert('Fluency score: ' + score))
             }).catch((error) => {
                 console.error('Error uploading audio:', error);
             });

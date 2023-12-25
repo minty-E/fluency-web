@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Uploading to Firebase</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .elements {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
-<body>
-    <div id="root"></div>
-    <div class="elements">
-        <h1>Uploading to database!</h1>
-        <input type="file" id="audioInput" accept="audio/*">
-        <button id="uploadButton">Upload</button>
+
+<body class="bg-gray-100 py-8">
+<div class="container mx-auto">
+    <div class="elements bg-white p-6 rounded shadow-md">
+        <h1 class="text-3xl font-bold mb-4">Uploading to database!</h1>
+        <input type="file" id="audioInput" accept="audio/*" class="mb-4 py-2 px-4 border border-gray-300 rounded focus:outline-none focus:border-blue-500">
+        <button id="uploadButton" class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">Upload</button>
     </div>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script type="module" src="./testing.js"></script>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="module" src="./testing.js"></script>
 </body>
+
 </html>

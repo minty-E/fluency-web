@@ -1,0 +1,17 @@
+{
+  "name": "jquery-firebase",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cors.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/minty-E/fluency-web.git"
+  },
+  "private": true,
+  "dependencies": {
+    "three": "^0.160.0"
+  }
+}
